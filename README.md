@@ -380,4 +380,3 @@ If your workloads require persistent storage with features like replication or c
 - [synology-csi](https://github.com/SynologyOpenSource/synology-csi)
 
 These tools offer a variety of solutions to meet your persistent storage needs, whether you’re using cloud-native or self-hosted infrastructures.
-# flux-cluster
