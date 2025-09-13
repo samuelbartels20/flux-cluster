@@ -55,18 +55,7 @@ There are **5 stages** outlined below for completing this project, make sure you
 > [!TIP]
 > It is recommended to set the visibility of your repository to `Public` so you can easily request help if you get stuck.
 
-1. Create a new repository by clicking the green `Use this template` button at the top of this page, then clone the new repo you just created and `cd` into it. Alternatively you can us the [GitHub CLI](https://cli.github.com/) ...
-
-    ```sh
-    export REPONAME="home-ops"
-    gh repo create $REPONAME --template onedr0p/cluster-template --disable-wiki --public --clone && cd $REPONAME
-    ```
-
-2. **Install** the [Mise CLI](https://mise.jdx.dev/getting-started.html#installing-mise-cli) on your workstation.
-
-3. **Activate** Mise in your shell by following the [activation guide](https://mise.jdx.dev/getting-started.html#activate-mise).
-
-4. Use `mise` to install the **required** CLI tools:
+1. Use `mise` to install the **required** CLI tools:
 
     ```sh
     mise trust
@@ -78,7 +67,7 @@ There are **5 stages** outlined below for completing this project, make sure you
 
    📍 _**Having trouble compiling Python?** Try running `mise settings python.compile=0` and then run these commands again_
 
-5. Logout of GitHub Container Registry (GHCR) as this may cause authorization problems when using the public registry:
+2. Logout of GitHub Container Registry (GHCR) as this may cause authorization problems when using the public registry:
 
     ```sh
     docker logout ghcr.io
