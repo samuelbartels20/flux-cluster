@@ -1,7 +1,5 @@
 # ⛵ Cluster Template
 
-Welcome to my template designed for deploying a single Kubernetes cluster. Whether you're setting up a cluster at home on bare-metal or virtual machines (VMs), this project aims to simplify the process and make Kubernetes more accessible. This template is inspired by my personal [home-ops](https://github.com/onedr0p/home-ops) repository, providing a practical starting point for anyone interested in managing their own Kubernetes environment.
-
 At its core, this project leverages [makejinja](https://github.com/mirkolenz/makejinja), a powerful tool for rendering templates. By reading configuration files—such as [cluster.yaml](./cluster.sample.yaml) and [nodes.yaml](./nodes.sample.yaml)—Makejinja generates the necessary configurations to deploy a Kubernetes cluster with the following features:
 
 - Easy configuration through YAML files.
@@ -220,7 +218,7 @@ The `external-dns` application created in the `network` namespace will handle cr
 ### 🏠 Home DNS
 
 > [!TIP]
-> Use the `internal` gateway on `HTTPRoutes` to make applications private to your network. If you're having trouble with internal DNS resolution check out [this](https://github.com/onedr0p/cluster-template/discussions/719) GitHub discussion.
+> Use the `internal` gateway on `HTTPRoutes` to make applications private to your network.
 
 `k8s_gateway` will provide DNS resolution to external Kubernetes resources (i.e. points of entry to the cluster) from any device that uses your home DNS server. For this to work, your home DNS server must be configured to forward DNS queries for `${cloudflare_domain}` to `${cluster_dns_gateway_addr}` instead of the upstream DNS server(s) it normally uses. This is a form of **split DNS** (aka split-horizon DNS / conditional forwarding).
 
@@ -393,61 +391,3 @@ If your workloads require persistent storage with features like replication or c
 - [synology-csi](https://github.com/SynologyOpenSource/synology-csi)
 
 These tools offer a variety of solutions to meet your persistent storage needs, whether you’re using cloud-native or self-hosted infrastructures.
-
-### Community Repositories
-
-Community member [@whazor](https://github.com/whazor) created [Kubesearch](https://kubesearch.dev) to allow searching Flux HelmReleases across Github and Gitlab repositories with the `kubesearch` topic.
-
-## 🙋 Support
-
-### Community
-
-- Make a post in this repository's Github [Discussions](https://github.com/onedr0p/cluster-template/discussions).
-- Start a thread in the `#support` or `#cluster-template` channels in the [Home Operations](https://discord.gg/home-operations) Discord server.
-
-### GitHub Sponsors
-
-If you're having difficulty with this project, can't find the answers you need through the community support options above, or simply want to show your appreciation while gaining deeper insights, I’m offering one-on-one paid support through GitHub Sponsors for a limited time. Payment and scheduling will be coordinated through [GitHub Sponsors](https://github.com/sponsors/onedr0p).
-
-<details>
-
-<summary>Click to expand the details</summary>
-
-<br>
-
-- **Rate**: $50/hour (no longer than 2 hours / day).
-- **What’s Included**: Assistance with deployment, debugging, or answering questions related to this project.
-- **What to Expect**:
-  1. Sessions will focus on specific questions or issues you are facing.
-  2. I will provide guidance, explanations, and actionable steps to help resolve your concerns.
-  3. Support is limited to this project and does not extend to unrelated tools or custom feature development.
-
-</details>
-
-## 🙌 Related Projects
-
-If this repo is too hot to handle or too cold to hold check out these following projects.
-
-- [ajaykumar4/cluster-template](https://github.com/ajaykumar4/cluster-template) - _A template for deploying a Talos Kubernetes cluster including Argo for GitOps_
-- [khuedoan/homelab](https://github.com/khuedoan/homelab) - _Fully automated homelab from empty disk to running services with a single command._
-- [mitchross/k3s-argocd-starter](https://github.com/mitchross/k3s-argocd-starter) - starter kit for k3s, argocd
-- [ricsanfre/pi-cluster](https://github.com/ricsanfre/pi-cluster) - _Pi Kubernetes Cluster. Homelab kubernetes cluster automated with Ansible and FluxCD_
-- [techno-tim/k3s-ansible](https://github.com/techno-tim/k3s-ansible) - _The easiest way to bootstrap a self-hosted High Availability Kubernetes cluster. A fully automated HA k3s etcd install with kube-vip, MetalLB, and more. Build. Destroy. Repeat._
-
-## ⭐ Stargazers
-
-<div align="center">
-
-<a href="https://star-history.com/#onedr0p/cluster-template&Date">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=onedr0p/cluster-template&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=onedr0p/cluster-template&type=Date" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=onedr0p/cluster-template&type=Date" />
-  </picture>
-</a>
-
-</div>
-
-## 🤝 Thanks
-
-Big shout out to all the contributors, sponsors and everyone else who has helped on this project.
